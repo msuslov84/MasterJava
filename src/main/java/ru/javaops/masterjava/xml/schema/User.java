@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import java.util.List;
 
 
 /**
@@ -36,12 +37,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "email",
-    "fullName"
+    "fullName",
+        "groups"
 })
 @XmlRootElement(name = "User", namespace = "http://javaops.ru")
 public class User {
 
-    @XmlElement(namespace = "http://javaops.ru", required = true)
+    @XmlAttribute(name = "email", required = true)
     protected String email;
     @XmlElement(namespace = "http://javaops.ru", required = true)
     protected String fullName;
@@ -51,6 +53,8 @@ public class User {
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
     protected Object city;
+    @XmlElement(name = "Groups", namespace = "http://javaops.ru", required = true)
+    protected List<Group> groups;
 
     /**
      * Gets the value of the email property.
@@ -148,4 +152,11 @@ public class User {
         this.city = value;
     }
 
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
+    }
 }

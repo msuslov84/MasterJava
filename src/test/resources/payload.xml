@@ -2,17 +2,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://javaops.ru payload.xsd">
     <Users>
-        <User flag="active" city="kiv">
-            <email>gmail@gmail.com</email>
+        <User flag="active" city="kiv" email="gmail@gmail.com">
             <fullName>Full Name</fullName>
+            <Groups>
+                <group>top2</group>
+                <group>mstr1</group>
+            </Groups>
         </User>
-        <User flag="superuser" city="spb">
-            <email>admin@javaops.ru</email>
+        <User flag="superuser" city="spb" email="admin@javaops.ru">
             <fullName>Admin</fullName>
+            <Groups>
+                <group>strt1</group>
+                <group>strt2</group>
+                <group>base3</group>
+                <group>top1</group>
+                <group>top2</group>
+                <group>top3</group>
+                <group>mstr1</group>
+            </Groups>
         </User>
-        <User flag="deleted" city="spb">
-            <email>mail@yandex.ru</email>
+        <User flag="deleted" city="spb" email="mail@yandex.ru">
             <fullName>Deleted</fullName>
+            <Groups>
+                <group>strt1</group>
+            </Groups>
         </User>
     </Users>
     <Cities>
@@ -20,4 +33,52 @@
         <City id="kiv">Киев</City>
         <City id="mnsk">Минск</City>
     </Cities>
+    <Projects>
+        <Project id="strt">
+            <name>Start Java</name>
+            <description>First step</description>
+        </Project>
+        <Project id="base">
+            <name>Base Java</name>
+            <description>Second step</description>
+        </Project>
+        <Project id="top">
+            <name>Top Java</name>
+            <description>Third step</description>
+        </Project>
+        <Project id="mstr">
+            <name>Master Java</name>
+            <description>Additional step</description>
+        </Project>
+    </Projects>
+    <Groups>
+        <Group id="strt1" project="strt">
+            <name>start_java_1</name>
+            <type>FINISHED</type>
+        </Group>
+        <Group id="strt2" project="strt">
+            <name>start_java_2</name>
+            <type>CURRENT</type>
+        </Group>
+        <Group id="base3" project="base">
+            <name>base_java_3</name>
+            <type>FINISHED</type>
+        </Group>
+        <Group id="top1" project="top">
+            <name>top_java_1</name>
+            <type>FINISHED</type>
+        </Group>
+        <Group id="top2" project="top">
+            <name>top_java_2</name>
+            <type>CURRENT</type>
+        </Group>
+        <Group id="top3" project="top">
+            <name>top_java_3</name>
+            <type>REGISTERING</type>
+        </Group>
+        <Group id="mstr1" project="mstr">
+            <name>master_java_1</name>
+            <type>REGISTERING</type>
+        </Group>
+    </Groups>
 </Payload>
